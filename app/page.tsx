@@ -2,12 +2,9 @@ import CompanionCard from "@/components/card/companionCard";
 import CompanionsList from "@/components/list/companionsList";
 import CTA from "@/components/CTA";
 import react from "react";
-
-
-
+import { recentSessions } from "@/constants";
 
 const Home = () => {
-
   return (
     <main>
       <h1 className="text-2xl underline">Popular Companions </h1>
@@ -39,11 +36,15 @@ const Home = () => {
       </section>
 
       <section className="home-section">
-        <CompanionsList />
+        <CompanionsList
+          title="Recently Completed Sessions"
+          Companions={recentSessions}
+          ClassNames="w-2/3 max-lg:w-full"
+        />
         <CTA />
       </section>
     </main>
   );
-}
+};
 
 export default Home;
